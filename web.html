@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoping</title>
+
+    <link rel="stylesheet" href="web.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="https://www.youtube.com/watch?v=YSuHrTfcikU&list=RDYSuHrTfcikU&start_radio=1">
+                <img src="imgs/pngegg.png" class="logonav">
+            </a>
+            <div class="nav-profile">   
+                <p class="nav-profile-name">Gamer Shop</p>
+                <div onclick="openClass()" class="nav-profile-cart">
+                    <i class="fas fa-cart-shopping"></i>
+                    <div id="cartcount" class="cartcount" style="display: none;"> 
+                        0
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="sidebar">
+            <input onkeyup="searchsometime(this)" id="txt_search" input type="search" id="mySearch" maxlength="20"
+                class="sidebar-search" placeholder="Search something...">
+
+            <a onclick="seachproduct('all')" class="sidebar-items">
+                All product
+            </a>
+            <a onclick="seachproduct('game')" class="sidebar-items">
+                Game
+            </a>
+            <a onclick="seachproduct('Artbook')" class="sidebar-items">
+                Artbook
+            </a>
+            <a onclick="seachproduct('DLC')" class="sidebar-items">
+                DLC
+            </a>
+
+        </div>
+        <div id="productlist" class="product">
+
+
+        </div>
+    </div>
+
+    <div id="modaldetail" class="modal" style="display: none;">
+        <div onclick="functionclose()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>Detail</h2>
+            <br>
+            <div class="modaldesc-content">
+                <img id="mddes-img" class="modaldesc-img"
+                    src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Minecraft-creeper-face.jpg" alt="">
+                <div class="modaldesc-detail">
+                    <p id="mddes-name" style="font-size: 1.5vw;">Product name</p>
+                    <p id="mddes-price" style="font-size: 1.2vw;">500 THB</p>
+                    <br>
+                    <p id="mddes-des" style="color: #adadad;">Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                        Laboriosam
+                        assumenda error autem maiores quaerat corrupti voluptate architecto quasi excepturi, dicta amet
+                        animi consectetur, vel eum laborum ipsa. Consequatur, exercitationem eos.</p>
+                    <br>
+                    <div class="btn-control">
+                        <button onclick="functionclose()" class="btn">
+                            Close
+                        </button>
+                        <button onclick="Buytocart()" class="btn btn-buy">
+                            Add to cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modalCart" class="modal" style="display: none;">
+        <div onclick="functionclose()" class="modal-bg"></div>
+        <div class="modal-page">
+            <h2>My cart</h2>
+            <br>
+            <div id="mycart" class="cartlist">
+                <div class="cartlist-items">
+                    <div class="cartlist-left">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Minecraft-creeper-face.jpg"
+                            alt="">
+                        <div class="cartlist-detail">
+                            <p style="font-size: 1.5vw;">Product name</p>
+                            <p style="font-size: 1.2vw;">500 THB</p>
+                        </div>
+                    </div>
+                    <div class="cartlist-right">
+                        <p class="btnc">-</p>
+                        <p style="margin: 0 20px;">1</p>
+                        <p class="btnc">+</p>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-control">
+                <button onclick="functionclose()" class="btn">
+                    Cancel
+                </button>
+                <button onclick="checkout()" class="btn btn-buy">
+                    ชำระเงิน
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
