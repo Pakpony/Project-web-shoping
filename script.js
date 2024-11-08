@@ -375,3 +375,21 @@ function rendercart() {
         $("#mycart").html(`<p>Not found product list</p>`);
     }
 }
+function deinitems(operation, index) {
+    if (operation === '+') {
+        cart[index].count += 1;
+    } else if (operation === '-' && cart[index].count > 1) {
+        cart[index].count -= 1;
+    } else if (operation === '-' && cart[index].count === 1) {
+        cart.splice(index, 1);
+    }
+    rendercart();
+}
+
+function calculateTotal() {
+    return cart.reduce((total, item) => total + (item.price * item.count), 0);
+}
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
