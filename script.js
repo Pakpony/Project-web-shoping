@@ -115,7 +115,7 @@ function numberWithCommas(x) {
 }
 
 function searchsometime(idsearch) {
-    //  console.log("#" + idsearch.id)
+    
     var value = $("#" + idsearch.id).val().toLowerCase();
     console.log(value);
 
